@@ -1,6 +1,6 @@
 import base = require('../base');
 import urllib = require("url");
-var request = require('sync-request');
+var requestlib = require('sync-request');
 
 
 interface IOpts {
@@ -15,9 +15,9 @@ interface IResponse {
 }
 
 // Execute synchronously a HTTP request.
-function REQUEST(jssh: base.Probe) {
+function request(jssh: base.Probe) {
 
-    function REQUEST(method, url, opts: IOpts): IResponse {
+    function request(method, url, opts: IOpts): IResponse {
         if(!opts) {
             opts = {
                 headers: null,
@@ -29,9 +29,9 @@ function REQUEST(jssh: base.Probe) {
         var parts = urllib.parse(url);
         if(!parts.protocol) url = 'http://' + url;
 
-        return request(method, url, opts);
+        return requestlib(method, url, opts);
     }
-    return REQUEST;
+    return request;
 }
 
-export = REQUEST;
+export = request;

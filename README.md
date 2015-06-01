@@ -22,7 +22,7 @@ require('jssh-api-jssh/global')
 
 html = GET('example.com')
 html.to('example.html')
-echo('Saved file to "example.html"')
+echo('Saved page to "example.html"')
 
 ip = IP()
 echo('Your IP is: ' + ip)
@@ -35,7 +35,7 @@ require 'jssh-api-jssh/global'
 
 html = GET 'example.com'
 html.to 'example.html'
-echo 'Saved file to "example.html"'
+echo 'Saved page to "example.html"'
 
 ip = IP()
 echo 'Your IP is: ' + ip
@@ -47,4 +47,41 @@ echo 'Your IP is: ' + ip
 - [`cat`](./help/cat.md)
 - [`cd`](./help/cd.md)
 - [`chmod`](./help/chmod.md)
-- ...
+- [`chown`](./help/chown.md)
+- [`cp`](./help/cp.md)
+- [`DELETE`](./help/DELETE.md)
+- [`dirs`](./help/dirs.md)
+- [`echo`](./help/echo.md)
+- [`error`](./help/error.md)
+- [`exec`](./help/exec.md)
+- [`find`](./help/find.md)
+- [`GET`](./help/GET.md)
+- [`glob`](./help/glob.md)
+- [`grep`](./help/grep.md)
+- [`HEAD`](./help/HEAD.md)
+- [`help`](./help/help.md)
+- [`id`](./help/id.md)
+- [`IP`](./help/IP.md)
+- [`ln`](./help/ln.md)
+- [`ls`](./help/ls.md)
+- [`mkdir`](./help/mkdir.md)
+- [`mv`](./help/mv.md)
+- [`nothing`](./help/nothing.md)
+- [`PATCH`](./help/PATCH.md)
+- [`popd`](./help/popd.md)
+- [`POST`](./help/POST.md)
+- [`print`](./help/print.md)
+- [`pushd`](./help/pushd.md)
+- [`POST`](./help/POST.md)
+- [`print`](./help/print.md)
+- [`pushd`](./help/pushd.md)
+- [`PUT`](./help/PUT.md)
+- [`pwd`](./help/pwd.md)
+- [`request`](./help/request.md)
+- [`rm`](./help/rm.md)
+- [`sed`](./help/sed.md)
+- [`tempdir`](./help/tempdir.md)
+- [`test`](./help/test.md)
+- [`to`](./help/to.md)
+- [`toEnd`](./help/toEnd.md)
+- [`which`](./help/which.md)

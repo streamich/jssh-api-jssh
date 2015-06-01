@@ -2,7 +2,7 @@ import base = require('../base');
 
 
 function DELETE(jssh: base.Probe) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
 
     /**
      * Execute a HTTP DELETE request.
@@ -13,7 +13,7 @@ function DELETE(jssh: base.Probe) {
      */
     function DELETE(url, headers: any = {}, opts: any = {}): string {
         opts.headers = headers;
-        var response = REQUEST('DELETE', url, opts);
+        var response = request('DELETE', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return DELETE;

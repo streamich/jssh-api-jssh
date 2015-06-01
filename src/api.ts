@@ -29,7 +29,7 @@ var api: any = {
     'cat',
     'pwd',
 
-    'REQUEST',
+    'request',
     'GET',
     'DELETE',
     'HEAD',

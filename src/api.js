@@ -21,7 +21,7 @@ var api = {
     'help',
     'cat',
     'pwd',
-    'REQUEST',
+    'request',
     'GET',
     'DELETE',
     'HEAD',

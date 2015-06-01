@@ -1,8 +1,8 @@
 var urllib = require("url");
-var request = require('sync-request');
+var requestlib = require('sync-request');
 // Execute synchronously a HTTP request.
-function REQUEST(jssh) {
-    function REQUEST(method, url, opts) {
+function request(jssh) {
+    function request(method, url, opts) {
         if (!opts) {
             opts = {
                 headers: null,
@@ -13,8 +13,8 @@ function REQUEST(jssh) {
         var parts = urllib.parse(url);
         if (!parts.protocol)
             url = 'http://' + url;
-        return request(method, url, opts);
+        return requestlib(method, url, opts);
     }
-    return REQUEST;
+    return request;
 }
-module.exports = REQUEST;
+module.exports = request;

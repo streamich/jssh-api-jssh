@@ -4,7 +4,7 @@ Executes a HTTP `POST` request. If no protocol in `url` is provided, `'http://'`
 
 Returns a string containing body of the response. For more detailed response info see `REQUEST`.
 
-See also: `PATCH`, `PUT`, `GET`, `DELETE`, `HEAD` and `REQUEST`. 
+See also: `PATCH`, `PUT`, `GET`, `DELETE`, `HEAD` and `request`. 
 
 ```typescript
 POST(url: string, body: string|Buffer = '', headers: any = {}): string

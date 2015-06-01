@@ -1,5 +1,5 @@
 function DELETE(jssh) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
     /**
      * Execute a HTTP DELETE request.
      * @param url
@@ -11,7 +11,7 @@ function DELETE(jssh) {
         if (headers === void 0) { headers = {}; }
         if (opts === void 0) { opts = {}; }
         opts.headers = headers;
-        var response = REQUEST('DELETE', url, opts);
+        var response = request('DELETE', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return DELETE;

@@ -4,7 +4,7 @@ Executes a HTTP `HEAD` request. If no protocol in `url` is provided, `'http://'`
 
 Returns a string containing body of the response. For more detailed response info see `REQUEST`.
 
-See also: `POST`, `PUT`, `PATCH`, `DELETE`, `GET` and `REQUEST`. 
+See also: `POST`, `PUT`, `PATCH`, `DELETE`, `GET` and `request`. 
 
 ```typescript
 HEAD(url: string, headers: any = {}): string
