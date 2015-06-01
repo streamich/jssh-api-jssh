@@ -22,8 +22,10 @@ require('../global');
 //lib.help(lib.$);
 //console.log(lib.cat.help());
 //lib.help(lib.head);
-console.log(head(1e5, 'package.json') );
+//console.log(head(1e5, 'package.json') );
 //lib.help();
+
+console.log(GET('example.com'));
 
 //$("ls");
 //console.log(lib.cd('..'));

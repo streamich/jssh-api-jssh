@@ -1,5 +1,5 @@
 function POST(jssh) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
     /**
      * Execute a HTTP POST request.
      * @param url
@@ -15,7 +15,7 @@ function POST(jssh) {
         if (opts === void 0) { opts = {}; }
         opts.body = body;
         opts.headers = headers;
-        var response = REQUEST('POST', url, opts);
+        var response = request('POST', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return POST;

@@ -1,5 +1,5 @@
 function PATCH(jssh) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
     /**
      * Execute a HTTP PATCH request.
      * @param url
@@ -15,7 +15,7 @@ function PATCH(jssh) {
         if (opts === void 0) { opts = {}; }
         opts.body = body;
         opts.headers = headers;
-        var response = REQUEST('PATCH', url, opts);
+        var response = request('PATCH', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return PATCH;

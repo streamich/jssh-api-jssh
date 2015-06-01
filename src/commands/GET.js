@@ -1,6 +1,6 @@
 // Execute a vanilla HTTP GET request.
 function GET(jssh) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
     /**
      * Execute a plain HTTP GET request.
      * @param url
@@ -13,7 +13,7 @@ function GET(jssh) {
         if (headers === void 0) { headers = {}; }
         if (opts === void 0) { opts = {}; }
         opts.headers = headers;
-        var response = REQUEST('GET', url, opts);
+        var response = request('GET', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return GET;

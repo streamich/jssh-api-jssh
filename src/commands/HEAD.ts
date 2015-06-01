@@ -2,7 +2,7 @@ import base = require('../base');
 
 
 function HEAD(jssh: base.Probe) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
 
     /**
      * Execute a plain HTTP HEAD request.
@@ -14,7 +14,7 @@ function HEAD(jssh: base.Probe) {
      */
     function HEAD(url, headers: any = {}, opts: any = {}): string {
         opts.headers = headers;
-        var response = REQUEST('HEAD', url, opts);
+        var response = request('HEAD', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return HEAD;

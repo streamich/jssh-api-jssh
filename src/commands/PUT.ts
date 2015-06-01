@@ -2,7 +2,7 @@ import base = require('../base');
 
 
 function PUT(jssh: base.Probe) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('v');
 
     /**
      * Execute a HTTP PUT request.
@@ -16,7 +16,7 @@ function PUT(jssh: base.Probe) {
     function PUT(url, body: string|Buffer = '', headers: any = {}, opts: any = {}): string {
         opts.body = body;
         opts.headers = headers;
-        var response = REQUEST('PUT', url, opts);
+        var response = request('PUT', url, opts);
         return response.body.toString();
     }
     return PUT;

@@ -3,7 +3,7 @@ import base = require('../base');
 
 // Execute a vanilla HTTP GET request.
 function GET(jssh: base.Probe) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('request');
 
     /**
      * Execute a plain HTTP GET request.
@@ -15,7 +15,7 @@ function GET(jssh: base.Probe) {
      */
     function GET(url, headers: any = {}, opts: any = {}): string {
         opts.headers = headers;
-        var response = REQUEST('GET', url, opts);
+        var response = request('GET', url, opts);
         return jssh.returnString(response.body.toString());
     }
     return GET;

@@ -1,5 +1,5 @@
 function PUT(jssh) {
-    var REQUEST = jssh.dependency('REQUEST');
+    var request = jssh.dependency('v');
     /**
      * Execute a HTTP PUT request.
      * @param url
@@ -15,7 +15,7 @@ function PUT(jssh) {
         if (opts === void 0) { opts = {}; }
         opts.body = body;
         opts.headers = headers;
-        var response = REQUEST('PUT', url, opts);
+        var response = request('PUT', url, opts);
         return response.body.toString();
     }
     return PUT;
