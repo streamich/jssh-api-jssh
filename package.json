@@ -1,6 +1,6 @@
 {
     "name": "jssh-api-jssh",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "BASH-like API for jssh",
     "main": "src/api.js",
     "repository": {

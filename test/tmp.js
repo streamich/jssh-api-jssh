@@ -1,9 +1,4 @@
-var lib = require("../src/api.js");
-//var lib = require("/code/src/api.js");
-var id = lib.id;
-var chown = lib.chown;
-var glob = lib.glob;
-var $ = lib.$;
+require('../global');
 
 
 //console.log(posix.getpwnam(posix.getuid()));
@@ -26,7 +21,8 @@ var $ = lib.$;
 //console.log(lib.print.help());
 //lib.help(lib.$);
 //console.log(lib.cat.help());
-lib.help(lib.to);
+//lib.help(lib.head);
+console.log(head(1e5, 'package.json') );
 //lib.help();
 
 //$("ls");

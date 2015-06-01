@@ -58,6 +58,7 @@ echo 'Your IP is: ' + ip
 - [`GET`](./help/GET.md)
 - [`glob`](./help/glob.md)
 - [`grep`](./help/grep.md)
+- [`head`](./help/head.md)
 - [`HEAD`](./help/HEAD.md)
 - [`help`](./help/help.md)
 - [`id`](./help/id.md)
@@ -85,6 +86,15 @@ echo 'Your IP is: ' + ip
 - [`to`](./help/to.md)
 - [`toEnd`](./help/toEnd.md)
 - [`which`](./help/which.md)
+
+## TODO
+
+- Remove commands that require native module compilation from this package and put in a separate package instead, to
+make these commands portable across platforms.
+
+- Commands still to be implemented:
+
+    - `tar`
 
 ## License
 

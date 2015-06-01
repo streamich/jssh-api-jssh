@@ -66,16 +66,17 @@ var base;
              * @type {string}
              */
             this.cmd = "";
+            this.cmdFile = "";
             /**
              * Function help information.
              * @type {string}
              */
             this.helpFile = '';
             this.helpText = '';
-            this.cmd = cmd;
+            this.cmdFile = this.cmd = cmd;
         }
         Probe.load = function (probe) {
-            var command = require('./commands/' + probe.cmd);
+            var command = require('./commands/' + probe.cmdFile);
             return command(probe);
         };
         Probe.prototype.error = function () {

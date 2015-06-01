@@ -65,3 +65,10 @@ var api: any = {
     probe.helpFile = __dirname + '/../help/' + cmd + '.md';
     api[cmd] = probe.shell();
 });
+
+
+// Beause two files `head.js` and `HEAD.js` conflict.
+var probe = new base.Probe('head');
+probe.cmdFile = '_head';
+probe.helpFile = __dirname + '/../help/_head.md';
+api['head'] = probe.shell();

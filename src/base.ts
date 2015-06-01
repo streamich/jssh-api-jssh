@@ -62,7 +62,7 @@ module base {
     export class Probe {
 
         static load(probe: Probe) {
-            var command = require('./commands/' + probe.cmd);
+            var command = require('./commands/' + probe.cmdFile);
             return command(probe);
         }
 
@@ -71,6 +71,8 @@ module base {
          * @type {string}
          */
         cmd = "";
+
+        cmdFile = "";
 
         /**
          * Function help information.
@@ -81,7 +83,7 @@ module base {
         helpText = '';
 
         constructor(cmd: string) {
-            this.cmd = cmd;
+            this.cmdFile = this.cmd = cmd;
         }
 
         /**
