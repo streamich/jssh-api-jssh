@@ -10,8 +10,6 @@ var api = {
 [
     '$',
     'glob',
-    'id',
-    'chown',
     'nothing',
     'cd',
     'find',

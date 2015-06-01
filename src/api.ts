@@ -17,8 +17,8 @@ var api: any = {
 [
     '$',
     'glob',
-    'id',
-    'chown',
+    //'id',     see `jssh-api-jssh-bin`
+    //'chown',
     'nothing',
     'cd',
     'find',
