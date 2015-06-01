@@ -14,8 +14,12 @@ var api: any = {
 
 // Exported commands with dependency injection.
 // The actual code is not loaded from the disk until the command is called for the first time.
+// *In dependency order:*
 [
+    'exec',
     '$',
+    'ls',
+    'request',
     'glob',
     //'id',     see `jssh-api-jssh-bin`
     //'chown',
@@ -29,7 +33,6 @@ var api: any = {
     'cat',
     'pwd',
 
-    'request',
     'GET',
     'DELETE',
     'HEAD',
@@ -38,8 +41,6 @@ var api: any = {
     'PATCH',
     'IP',
 
-    // Proxied to `shelljs` package.
-    'ls',
     'cp',
     'rm',
     'mv',
@@ -54,7 +55,6 @@ var api: any = {
     'chmod',
     'tempdir',
     'error',
-    'exec',
 
     // These functions are attached to `String.prototype`, but we also export them
     // there to make help on them available.
@@ -62,6 +62,7 @@ var api: any = {
     'toEnd',
 ].forEach((cmd) => {
     var probe = new base.Probe(cmd);
+    probe.api = api;
     probe.helpFile = __dirname + '/../help/' + cmd + '.md';
     api[cmd] = probe.shell();
 });

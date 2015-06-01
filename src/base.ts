@@ -61,10 +61,7 @@ module base {
      */
     export class Probe {
 
-        static load(probe: Probe) {
-            var command = require('./commands/' + probe.cmdFile);
-            return command(probe);
-        }
+        cmdDirectory = __dirname + '/commands/';
 
         /**
          * Command name.
@@ -81,6 +78,12 @@ module base {
         helpFile = '';
 
         helpText = '';
+
+        /**
+         * Collection of all `Probe`s.
+         * @type {{}}
+         */
+        api: any = {};
 
         constructor(cmd: string) {
             this.cmdFile = this.cmd = cmd;
@@ -106,8 +109,7 @@ module base {
         }
 
         dependency(cmd?: string) {
-            var probe = new Probe(cmd);
-            return probe.load();
+            return this.api[cmd];
         }
 
         /**
@@ -115,7 +117,8 @@ module base {
          * @returns {*}
          */
         load() {
-            return Probe.load(this);
+            var command = require(this.cmdDirectory + this.cmdFile);
+            return command(this);
         }
 
         printError(e) {
@@ -157,6 +160,7 @@ module base {
                 return self.getHelp();
             };
 
+            this.api[this.cmd] = func;
             return func;
         }
 

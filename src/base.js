@@ -61,6 +61,7 @@ var base;
      */
     var Probe = (function () {
         function Probe(cmd) {
+            this.cmdDirectory = __dirname + '/commands/';
             /**
              * Command name.
              * @type {string}
@@ -73,12 +74,13 @@ var base;
              */
             this.helpFile = '';
             this.helpText = '';
+            /**
+             * Collection of all `Probe`s.
+             * @type {{}}
+             */
+            this.api = {};
             this.cmdFile = this.cmd = cmd;
         }
-        Probe.load = function (probe) {
-            var command = require('./commands/' + probe.cmdFile);
-            return command(probe);
-        };
         Probe.prototype.error = function () {
             var args_arr = [];
             if (arguments.length) {
@@ -94,15 +96,15 @@ var base;
             }.bind(this);
         };
         Probe.prototype.dependency = function (cmd) {
-            var probe = new Probe(cmd);
-            return probe.load();
+            return this.api[cmd];
         };
         /**
          * Loads command from disk.
          * @returns {*}
          */
         Probe.prototype.load = function () {
-            return Probe.load(this);
+            var command = require(this.cmdDirectory + this.cmdFile);
+            return command(this);
         };
         Probe.prototype.printError = function (e) {
             printError(e);
@@ -141,6 +143,7 @@ var base;
                 // We read the file from disk only once the actual help requested.
                 return self.getHelp();
             };
+            this.api[this.cmd] = func;
             return func;
         };
         Probe.prototype["return"] = function (data) {

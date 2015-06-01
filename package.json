@@ -1,12 +1,13 @@
 {
     "name": "jssh-api-jssh",
-    "version": "0.0.10",
+    "version": "0.0.12",
     "description": "BASH-like API for jssh",
     "main": "src/api.js",
     "repository": {
         "type" : "git",
         "url" : "https://github.com/streamich/jssh-api-jssh.git"
     },
+    "license": "Unlicense",
     "dependencies": {
         "shelljs": "0.5.0",
         "glob": "5.0.10",

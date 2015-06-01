@@ -7,8 +7,12 @@ var api = {
 };
 // Exported commands with dependency injection.
 // The actual code is not loaded from the disk until the command is called for the first time.
+// *In dependency order:*
 [
+    'exec',
     '$',
+    'ls',
+    'request',
     'glob',
     'nothing',
     'cd',
@@ -19,7 +23,6 @@ var api = {
     'help',
     'cat',
     'pwd',
-    'request',
     'GET',
     'DELETE',
     'HEAD',
@@ -27,7 +30,6 @@ var api = {
     'PUT',
     'PATCH',
     'IP',
-    'ls',
     'cp',
     'rm',
     'mv',
@@ -42,11 +44,11 @@ var api = {
     'chmod',
     'tempdir',
     'error',
-    'exec',
     'to',
     'toEnd',
 ].forEach(function (cmd) {
     var probe = new base.Probe(cmd);
+    probe.api = api;
     probe.helpFile = __dirname + '/../help/' + cmd + '.md';
     api[cmd] = probe.shell();
 });
