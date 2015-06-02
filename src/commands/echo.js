@@ -3,7 +3,7 @@ function echo(jssh) {
     //    jssh.log.apply(jssh, msgs);
     //}
     function echo(msg) {
-        jssh.log(msg);
+        console.log.apply(console, arguments);
     }
     return echo;
 }

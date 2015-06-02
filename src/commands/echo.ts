@@ -8,7 +8,7 @@ function echo(jssh: base.Probe) {
     //    jssh.log.apply(jssh, msgs);
     //}
     function echo(msg: any) {
-        jssh.log(msg);
+        console.log.apply(console, arguments);
     }
     return echo;
 }
