@@ -43,7 +43,7 @@ echo 'Your IP is: ' + ip
 
 ## Commands
 
-- [`&`](./help/$.md)
+- [`&`](./help/$.md) -- should be improved to become [*$uper prompt*](https://github.com/streamich/jssh-api-superprompt) in the future
 - [`cat`](./help/cat.md)
 - [`cd`](./help/cd.md)
 - [`chmod`](./help/chmod.md)
