@@ -14,7 +14,7 @@
         "which": "1.1.1",
         "marked": "0.3.3",
         "marked-terminal": "1.5.0",
-        "chalk": "1.0.0",
+        "chalk": "1.1.2",
         "sync-request": "2.0.1"
     },
     "devDependencies": {
